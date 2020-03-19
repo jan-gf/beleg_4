@@ -9,6 +9,8 @@ Description : main() tests for dynamic casts
 */
 
 #include "vehicle.h"
+#include "citycar.h"
+#include "menu.h"
 
 bool inspect(Car*), // Inspection of different
 inspect(Truck*); // vehicle types.
@@ -17,8 +19,24 @@ bool distribute(Vehicle* vehiclePtr); // distribute vehicle for inspection
 
 
 int main() {
+    CityCar carPark = CityCar();
+    carPark.insert("Accord", false, 123, "Honda");
+    carPark.insert("Golf", true, 456, "VW");
 
-    return 0;
+    while (true)
+    {
+        char input = menu();
+        cout << "\n";
+    	
+        if (input == 'c')
+            getCar();
+        else if (input == 't')
+            getTruck();
+        else if (input == 's')
+            cout << "Not implemented\n";
+        else if (input == 'e')
+            return 0;
+    }	
 }
 
 
