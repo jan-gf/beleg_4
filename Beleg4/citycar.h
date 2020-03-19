@@ -9,7 +9,8 @@ class CityCar
 {
 private:
 	vector<Vehicle*> carPark;
-	int count;
+	int count;	
+	
 public:
 	CityCar();
 	~CityCar();
@@ -18,4 +19,8 @@ public:
 	bool insert(const string& type, bool sunroof, long number, const string& manuf);
 	// Insert new truck
 	bool insert(int axles, double capacity, long number, const string& manuf);
+
+	bool insert(Vehicle* vehicle);
+	
+	void print();
 };

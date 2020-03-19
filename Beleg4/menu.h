@@ -3,6 +3,6 @@
 
 char menu();
 
-Car getCar();
+Car* getCar();
 
-Truck getTruck();
+Truck* getTruck();

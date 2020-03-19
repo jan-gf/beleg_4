@@ -6,12 +6,14 @@ using namespace std;
 
 char menu()
 {
-	cout << "****Car-Park-Management-System*********\nC = add new car\nT = add new truck\nS = show car park\nE = exit program\n\nYour choice:";
+	cout << "\n\n****Car-Park-Management-System*********\nC = add new car\nT = add new truck\nS = show car park\nE = exit program\n\nYour choice:";
 
-	return cin.get();
+	string input;
+	getline(cin, input);
+	return input[0];
 }
 
-Car getCar()
+Car* getCar()
 {
 	cout << "***ADDING NEW CAR***\n\nCar Type: ";
 	string type;
@@ -21,13 +23,14 @@ Car getCar()
 	while(true)
 	{
 		cout << "Sun roof? [y/n]: ";
-		char input = cin.get();
-		if (input == 'y')
+		string input;
+		getline(cin, input);
+		if (input[0] == 'y')
 		{
 			sunroof = true;
 			break;
 		}
-		else if (input == 'n')
+		else if (input[0] == 'n')
 		{
 			sunroof = false;
 			break;
@@ -55,10 +58,10 @@ Car getCar()
 	cout << "Manufacturer:";
 	getline(cin, manuf);
 
-	return Car(type, sunroof, number, manuf);;
+	return new Car(type, sunroof, number, manuf);;
 }
 
-Truck getTruck()
+Truck* getTruck()
 {
 	cout << "***ADDING NEW Truck***\n\n";
 	int axles;
@@ -80,7 +83,7 @@ Truck getTruck()
 	double load;
 	while (true)
 	{
-		cout << "Axles: ";
+		cout << "Load: ";
 		string input;
 		getline(cin, input);
 		try
@@ -113,5 +116,5 @@ Truck getTruck()
 	cout << "Manufacturer:";
 	getline(cin, manuf);
 
-	return Truck(axles, load, number, manuf);;
+	return new Truck(axles, load, number, manuf);;
 }
