@@ -24,7 +24,7 @@ private:
     string manufacturer;
 public:
     Vehicle(long number = 0L, const string& manuf = "");
-    virtual ~Vehicle() {}
+    virtual ~Vehicle() = default;
 
     // access methods:
     long getLicenseNumber(void) const { return licenseNumber; }
