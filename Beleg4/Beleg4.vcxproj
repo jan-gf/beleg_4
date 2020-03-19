@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="citycar.cpp" />
+    <ClCompile Include="menu.cpp" />
     <ClCompile Include="vehicle.cpp" />
     <ClCompile Include="vehicle_t.cpp" />
   </ItemGroup>

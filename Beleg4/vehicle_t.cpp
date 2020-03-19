@@ -17,27 +17,6 @@ bool distribute(Vehicle* vehiclePtr); // distribute vehicle for inspection
 
 
 int main() {
-    Vehicle* vehiclePtr = new Car("520i", true, 3265, "BMW");
-
-    Car* carPtr = dynamic_cast<Car*>(vehiclePtr);
-    if (carPtr != NULL) { // ok?
-        cout << "\nAfter pointer Down-Cast: " << endl;
-        carPtr->display();
-    }
-
-    Car cabrio("190 SL", true, 9154, "Mercedes Benz");
-    Vehicle& r_vehicle = cabrio;
-
-    Car& r_car = dynamic_cast<Car&>(r_vehicle);
-    // ok? throws exception if not ok.
-
-    cout << "\nAfter reference Down-Cast: " << endl;
-    r_vehicle.display();
-    cin.get();
-
-    Truck* truckPtr = new Truck(8, 7.5, 5437, "Volvo");
-    distribute(vehiclePtr);
-    distribute(truckPtr);
 
     return 0;
 }
