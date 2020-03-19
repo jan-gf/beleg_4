@@ -23,15 +23,15 @@ private:
     long licenseNumber;
     string manufacturer;
 public:
-    Vehicle(long n = 0L, const string& manuf = "");
+    Vehicle(long number = 0L, const string& manuf = "");
     virtual ~Vehicle() {}
 
     // access methods:
     long getLicenseNumber(void) const { return licenseNumber; }
-    void setLicenseNumber(long n) { licenseNumber = n; }
+    void setLicenseNumber(long number) { licenseNumber = number; }
 
     const string& getManufacturer() const { return manufacturer; }
-    void setManufacturer(const string& h) { manufacturer = h; }
+    void setManufacturer(const string& manuf) { manufacturer = manuf; }
 
     virtual void display() const; // show vehicle
 };
@@ -44,13 +44,13 @@ private:
 
 public:
     Car(const string& type, bool sunroof,
-        int n = 0, const string& h = "");
+        int number = 0, const string& manuf = "");
 
     // access methods:
     const string& getTyp(void) const { return carType; }
-    void setTyp(const string s) { carType = s; }
+    void setTyp(const string type) { carType = type; }
     bool getSunRoof(void) const { return hasSunroof; }
-    void setSunRoof(bool d) { hasSunroof = d; }
+    void setSunRoof(bool sunroof) { hasSunroof = sunroof; }
     void display(void) const;
 };
 
@@ -61,10 +61,10 @@ private:
     double load;
 
 public:
-    Truck(int a, double t, int n, const string& hs);
-    void setAxles(int l) { axles = l; }
+    Truck(int axles, double load, int number, const string& manuf);
+    void setAxles(int a) { axles = a; }
     int getAxles() const { return axles; }
-    void setCapacity(double t) { load = t; }
+    void setCapacity(double capacity) { load = capacity; }
     double getCapacity() const { return load; }
 
     void display() const;

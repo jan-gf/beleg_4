@@ -15,8 +15,8 @@ Description : main() function for Vehicle application
 
 // Methods of the Vehicle base class 
 // ------------------------------------------------------
-Vehicle::Vehicle(long n, const string& manuf)
-    : licenseNumber(n), manufacturer(manuf) {}
+Vehicle::Vehicle(long number, const string& manuf)
+    : licenseNumber(number), manufacturer(manuf) {}
 
 void Vehicle::display() const {
     cout << "\n---------------------------- "
@@ -27,8 +27,8 @@ void Vehicle::display() const {
 
 // Methods of derived Car class:
 // -------------------------------------------------------
-Car::Car(const string& tp, bool sd, int n, const string& hs)
-    : Vehicle(n, hs), carType(tp), hasSunroof(sd) {}
+Car::Car(const string& type, bool sunroof, int number, const string& manuf)
+    : Vehicle(number, manuf), carType(type), hasSunroof(sunroof) {}
 
 void Car::display(void) const {
     Vehicle::display(); // base class method
@@ -43,8 +43,8 @@ void Car::display(void) const {
 
 // Methods of derived Truck class:
 // ----------------------------------------------------
-Truck::Truck(int a, double t, int n, const string& hs)
-    : Vehicle(n, hs), axles(a), load(t) {}
+Truck::Truck(int axles, double load, int number, const string& manuf)
+    : Vehicle(number, manuf), axles(axles), load(load) {}
 
 void Truck::display() const {
     Vehicle::display();
